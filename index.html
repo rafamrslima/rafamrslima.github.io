@@ -1,53 +1,131 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>JavaScript</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
-    
-     <!-- Compiled and minified CSS -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-</head>
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-                <div id="id" class="card">
-                    <div class="card-content">
-                        <span class="card-title">Task List</span>
-                        <div class="row">
-                            <form id="task-form">
-                                <div class="input-field col s12">
-                                    <input type="text" name="task" id="task">
-                                    <label for="task">New Task</label>
-                                </div>
-                                <input type="submit" value="Add Task" class="btn">
-                            </form>
-                        </div>
-                    </div>
-                    <div class="card-action">
-                        <h5 id="task-title">Tasks</h5>
-                        <div class="input-field col s12">
-                            <input type="text" name="filter" id="filter">
-                            <label for="filter">Filter Tasks</label>
-                        </div>
-                        <ul class="collection"> </ul>
-                        <a href="" class="clear-tasks btn black">Clear Tasks</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Sorteador</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <script
-  src="https://code.jquery.com/jquery-3.3.1.js"
-  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-  crossorigin="anonymous"></script>
-     <!-- Compiled and minified JavaScript -->
- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
- <script src="app.js"></script>      
-</body>
+    <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+ 
+  </head>
+  <body>
+    <div class="container">
+      <br />
+      <h3>Preencha os campos abaixo</h3>
+      <br />
+
+      <div class="row">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default"
+                >Item 1</span
+              >
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+              id="item1"
+            />
+        </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default"
+                >Item 2</span
+              >
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+              id="item2"
+              
+            />
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default"
+                >Item 3</span
+              >
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+              id="item3"
+              
+            />
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default"
+                >Item 4</span
+              >
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+              id="item4"
+              
+            />
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default"
+                >Item 5</span
+              >
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+              id="item5"
+              
+            />
+          </div>
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="inputGroup-sizing-default"
+                >Item 6</span
+              >
+            </div>
+            <input
+              type="text"
+              class="form-control"
+              aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default"
+              id="item6"
+              
+            />
+          </div>
+      </div>
+
+      <div class="row mb-5">
+          <div class="col-sm-5"></div>
+
+        <div class="col-sm-2">
+          <button class="btn btn-primary" id="btnDraw" disabled="true" onclick="setTimeout(generateRandom, 2000)">Sortear</button>
+        </div>
+        <div class="col-sm-5"></div>
+      </div>
+
+      <ul class="list-group list-group-flush" id="list"></ul>
+    </div>
+     
+    <script src="main.js"></script>
+  </body>
 </html>
